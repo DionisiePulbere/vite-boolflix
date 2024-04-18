@@ -16,7 +16,7 @@ export default {
     <header class="position-sticky top-0 start-0">
         <div class=" container py-3 d-flex justify-content-between">
             <div class="logo">
-                <h1>Boolifix</h1>
+                <h1>Boolflix</h1>
             </div>
             <div class="serch-bar d-flex">
                 <input v-model="store.filterInput" class="ps-3" type="text" placeholder="Cerca qualcosa da vedere">

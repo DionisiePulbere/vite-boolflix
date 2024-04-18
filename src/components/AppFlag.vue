@@ -13,7 +13,7 @@ export default {
     methods: {
             getFlag(language){
                 store.flags.forEach((flag) => {
-                    if (flag.language.includes(language)){
+                    if (flag.language === language){
                         this.flagMovie = "";
                         this.flagMovie = flag.emoji;
                     } 
