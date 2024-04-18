@@ -19,7 +19,7 @@ export default{
     }
   },
   methods: {
-    getFilmFromApi() {
+    searchFromApi() {
       if (store.filterInput !== ""){
         this.queryParams.query = store.filterInput;
       } else {
@@ -28,7 +28,10 @@ export default{
       axios.get("https://api.themoviedb.org/3/search/movie?", { params: this.queryParams })
       .then((response) => {
         store.movies = response.data.results;
-        console.log(response.data);
+      });
+      axios.get("https://api.themoviedb.org/3/search/tv?", { params: this.queryParams })
+      .then((response) => {
+        store.series = response.data.results;
       });
     },
   },
@@ -38,12 +41,13 @@ export default{
 </script>
 
 <template>
-  <AppHeader @filterInput="getFilmFromApi"></AppHeader>
+  <AppHeader @filterInput="searchFromApi"></AppHeader>
   <main>
     <AppMain></AppMain>
   </main>
 </template>
 
 <style lang="scss">
-@use './style/generic'
+@use './style/generic';
+
 </style>

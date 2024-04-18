@@ -13,10 +13,10 @@ export default {
 </script>
 
 <template>
-    <header>
-        <div class="container py-3 d-flex justify-content-between">
+    <header class="position-sticky top-0 start-0">
+        <div class=" container py-3 d-flex justify-content-between">
             <div class="logo">
-                <h1>Boolify</h1>
+                <h1>Boolifix</h1>
             </div>
             <div class="serch-bar d-flex">
                 <input v-model="store.filterInput" class="ps-3" type="text" placeholder="Cerca qualcosa da vedere">
@@ -35,6 +35,7 @@ export default {
     header{
         background-color: black;
         color: white;
+        z-index: 20;
     }
 
     input{
