@@ -19,7 +19,7 @@ export default {
                 <h1>Boolflix</h1>
             </div>
             <div class="serch-bar d-flex">
-                <input v-model="store.filterInput" class="ps-3" type="text" placeholder="Cerca qualcosa da vedere">
+                <input @keyup.enter="$emit('filterInput')" v-model="store.filterInput" class="ps-3" type="text" placeholder="Cerca qualcosa da vedere">
                 <button @click="$emit('filterInput')" class="btn btn-secondary ms-4">Cerca</button>
             </div>
         </div>

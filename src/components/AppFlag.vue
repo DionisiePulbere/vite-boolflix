@@ -21,24 +21,8 @@ export default {
         };
     },
     methods: {
-            // getFlag(language){
-            //     store.flags.forEach((flag) => {
-            //         if (flag.language === language){
-            //             this.flagMovie = "";
-            //             this.flagMovie = flag.emoji;
-            //         } 
-            //     })
-            // },
             getFlagUrl(){
                 let flagImageName = this.media.original_language + '.png';
-                // if (this.movie.orifinal_language === 'en') {
-                //     flgaImageName = "uk.png"
-                // } else if (this.movie.original_language === 'it') {
-                //     flgaImageName = "it.png"
-                // } else if (this.movie.original_language === 'fr') {
-                //     flgaImageName = "fr.png"
-                // }
-
                 return new URL(`../assets/img/${flagImageName}`, import.meta.url).href;
             }
         }

@@ -7,7 +7,7 @@
         name: 'AppResults',
         components: {
             AppFlag,
-            AppRating
+            AppRating,
         },
         data(){
             return {
@@ -32,7 +32,7 @@
                         <h5 class="card-title">{{ movie.title }}</h5>
                         <div>Titolo originale: {{ movie.original_title }}</div>
                         <AppFlag :media="movie"></AppFlag> 
-                        <AppRating :star="movie.vote_average"></AppRating>
+                        <AppRating :star="movie"></AppRating>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         <h5 class="card-title">{{ serie.name }}</h5>
                         <div>Titolo originale: {{ serie.original_name }}</div>
                         <AppFlag :media="serie"></AppFlag>
-                        <AppRating :star="serie.vote_average"></AppRating>
+                        <AppRating :star="serie"></AppRating>
                     </div>
                 </div>
             </div>

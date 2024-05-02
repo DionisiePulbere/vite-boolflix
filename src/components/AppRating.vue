@@ -5,25 +5,28 @@ export default {
     props: ["star"],
     data (){
         return {
-            yellowStar: 0,
-            whiteStar: 0
         }
     },
     methods: {
-        getStar(rating){
-            const half = rating / 2;
-            this.yellowStar = Math.ceil(half.toFixed(1));
-            this.whiteStar = 5 - this.yellowStar
+        getStar(){
+            return Math.ceil(this.star.vote_average / 2);
+                
         }
+        
     },
+    
 }
+
 
 </script>
 
 <template>
-    <div class="d-flex">
-        <i v-for="stars in this.yellowStar" class="fa-solid fa-star yellow" v-if="getStar(this.star)"></i>
-        <i v-for="stars in this.whiteStar" class="fa-solid fa-star white" v-if="getStar(this.star)"></i>
+    <div class="d-flex align-items-center">
+        Voto:
+        <div class="d-flex ms-1">
+            <i v-for="n in getStar()" class="fa-solid fa-star yellow"></i>
+            <i v-for="n in 5 - getStar()" class="fa-regular fa-star"></i>
+        </div>
     </div>
 </template>
 
@@ -32,7 +35,4 @@ export default {
     color: yellow;
    }
 
-   .white{
-    color: white;
-   }
 </style>
